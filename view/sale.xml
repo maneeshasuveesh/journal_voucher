@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<record id="action_quotation_per_client" model="ir.actions.act_window">
+            <field name="name">Quotations Per Client</field>
+            <field name="res_model">quotation.report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+<menuitem id="menu_quotation_per_client"
+            name="Quotation Per Client"
+            action="action_quotation_per_client"
+            parent="sale.menu_sale_report"
+            sequence="1"/>
+    </data>
+</odoo>

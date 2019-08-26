@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+       <record id="paperformat_tax_invoice" model="report.paperformat">
+
+        <field name="name">Custom</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">18</field>
+            <field name="margin_bottom">28</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">12</field>
+            <field name="dpi">90</field>
+
+       </record>
+
+
+        <report
+            string="Journal Voucher "
+            id="report_journal_voucher_id"
+            model="account.move"
+            report_type="qweb-pdf"
+            name="journal_voucher.journal_voucher_report"
+            file="journal_voucher.journal_voucher_report"
+            print_report_name="'Journal Voucher - %s' % (object.name)"
+
+            paperformat = "journal_voucher.paperformat_tax_invoice"
+        />
+
+
+
+
+    </data>
+
+</odoo>
